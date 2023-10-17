@@ -16,11 +16,11 @@ local plugins = {
   },
   {
     "mhartington/formatter.nvim",
+    ft = { "lua", "go" },
     cmd = { "Format", "FormatWrite" },
     config = function()
       require "custom.configs.formatter"
     end,
-    lazy = false,
   },
 }
 return plugins

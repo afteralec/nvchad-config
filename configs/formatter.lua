@@ -1,17 +1,24 @@
 local formatter = require "formatter"
 
-formatter.setup({
+formatter.setup {
   logging = true,
   log_level = vim.log.levels.WARN,
   filetype = {
     lua = {
-      require("formatter.filetypes.lua").stylua
+      require("formatter.filetypes.lua").stylua,
     },
     go = {
-      require("formatter.filetypes.go").gofmt
+      require("formatter.filetypes.go").gofumpt,
+      require("formatter.filetypes.go").golines,
+      function()
+        return {
+          exe = "goimports-reviser -rm-unused -set-alias -format ./...",
+          stdin = true,
+        }
+      end,
     },
     ["*"] = {
-      require("formatter.filetypes.any").remove_trailing_whitespace
-    }
-  }
-})
+      require("formatter.filetypes.any").remove_trailing_whitespace,
+    },
+  },
+}
