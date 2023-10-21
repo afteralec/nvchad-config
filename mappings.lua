@@ -1,11 +1,11 @@
 local M = {}
 M.formatter = {
   n = {
-    ["<leader>fmt"] = {
+    ["<leader>f"] = {
       "<cmd> Format <CR>",
       "Format the current file",
     },
-    ["<leader>FF"] = {
+    ["<leader>F"] = {
       "<cmd> FormatWrite <CR>",
       "Format and write the current file",
     },
