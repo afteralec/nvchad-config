@@ -11,6 +11,7 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
+        "tailwindcss",
       },
     },
   },

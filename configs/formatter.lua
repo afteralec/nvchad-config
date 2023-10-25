@@ -17,5 +17,9 @@ formatter.setup {
         }
       end,
     },
+    html = {
+      require("formatter.filetypes.html").tidy,
+      require("formatter.filetypes.html").htmlbeautify,
+    },
   },
 }
